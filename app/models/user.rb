@@ -1,17 +1,7 @@
 class User < ApplicationRecord
-<<<<<<< HEAD
-<<<<<<< HEAD
     attr_accessor :remember_token
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-    enum genders: [ "Male", "Female", "N/A" ] 
-=======
-    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
     enum genders: [ "Male", "Female", "N/A" ]
->>>>>>> chapter8
-=======
-    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-    enum genders: [ "Male", "Female", "N/A" ]
->>>>>>> chapter8
 
     validates :name, presence: true,length: {maximum: Settings.name_maximum}  #presence: true không được để trống
     validates :age, presence: true
@@ -24,21 +14,9 @@ class User < ApplicationRecord
     has_secure_password
     
     before_save :downcase_email
-<<<<<<< HEAD
-<<<<<<< HEAD
-
+    
     private
 
-=======
-
-    private
-
->>>>>>> chapter8
-=======
-
-    private
-
->>>>>>> chapter8
         def age_limit
             if self.age
                 age = Date.today.year - self.age.year
@@ -51,9 +29,7 @@ class User < ApplicationRecord
         def downcase_email
             self.email.downcase
         end
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
+
     public
 
         def User.digest(string)
@@ -80,9 +56,5 @@ class User < ApplicationRecord
         def forget
             update_attribute(:remember_digest, nil)
         end
-=======
->>>>>>> chapter8
-=======
->>>>>>> chapter8
 
 end
