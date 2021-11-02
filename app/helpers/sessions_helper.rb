@@ -5,25 +5,13 @@ module SessionsHelper
     
     def log_out
         if  session[:user_id]
-<<<<<<< HEAD
-<<<<<<< HEAD
             forget(current_user)
             session.delete(:user_id)
             @current_user = nil
-=======
-            session.delete(:user_id)
-            current_user = nil
->>>>>>> chapter8
-=======
-            session.delete(:user_id)
-            current_user = nil
->>>>>>> chapter8
             return true
         else
             return false
         end
-<<<<<<< HEAD
-<<<<<<< HEAD
     end
 
     def remember(user)
@@ -36,10 +24,6 @@ module SessionsHelper
         user.forget
         cookies.delete(:user_id)
         cookies.delete(:remember_token)  
-=======
->>>>>>> chapter8
-=======
->>>>>>> chapter8
     end
 
     def current_user
