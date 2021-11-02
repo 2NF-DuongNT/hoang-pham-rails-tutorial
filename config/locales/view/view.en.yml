@@ -9,16 +9,10 @@ en:
       btn_account: "Account"
       btn_profile: "Profile"
       btn_setting: "Setting"
-<<<<<<< HEAD
-<<<<<<< HEAD
     footer:
       btn_about: "About"
       btn_contact: "Contact"
       btn_news: "News"
-=======
->>>>>>> chapter8
-=======
->>>>>>> chapter8
   users:
     new:
       title: "Login"
@@ -28,19 +22,6 @@ en:
       label_password: "Password"
       label_confirmation: "Confirmation"
       btn_create: "Create my account"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> chapter8
-    footer:
-      btn_about: "About"
-      btn_contact: "Contact"
-      btn_news: "News"
-<<<<<<< HEAD
->>>>>>> chapter8
-=======
->>>>>>> chapter8
   static_pages:
     home:
       title: "Home"
@@ -56,12 +37,6 @@ en:
       t1: "New user?"
       btn_login: "Log in"
       btn_sigup: "Sig up now!"
-<<<<<<< HEAD
-<<<<<<< HEAD
+
       check_box_remember: "Remember me on this computer"
       label_password: "Password"
-
-=======
->>>>>>> chapter8
-=======
->>>>>>> chapter8
