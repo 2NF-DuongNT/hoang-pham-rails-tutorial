@@ -12,8 +12,19 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/users/sendusers', to: 'users#send_user'
-  resources :users
+  get '/comments/new/(:parent_id)', to: 'comments#new'
+  resources :users do
+    get '/following', to: 'following#show'
+    get '/followers', to: 'followers#show'
+  end
+  resources :micropost do
+    resources :comments, only: [:create, :new, :destroy] do
+      resources :comments, only: :new
+    end
+  end
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :microposts, only: [:create, :destroy]
+  resources :comments, only: [:destroy,:new]
+  resources :relationships, only: [:create, :destroy]
 end

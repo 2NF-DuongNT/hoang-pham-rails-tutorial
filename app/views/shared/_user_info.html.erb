@@ -1,8 +1,10 @@
-<%= link_to gravatar_for(current_user, size: 50), current_user %>
-<h1><%= current_user.name %></h1>
- <div class="form-floating mb-3">
-    <span><%= link_to t(".btn_profile"), current_user %></span>
+ <div class = "form-floating mb-2">
+    <%= link_to gravatar_for(current_user, size: 80), current_user, class: "mb-3" %>
+    <h1 class = "d-inline "><%= current_user.name %></h1>
 </div>
- <div class="form-floating mb-3">
+<div class = "form-floating mb-3">
+    <%= link_to t(".btn_profile"), current_user, class: "btn btn-primary" %>
+</div>
+ <div class = "form-floating mb-3">
     <span><%= pluralize(current_user.microposts.count, "micropost") %></span>
 </div>

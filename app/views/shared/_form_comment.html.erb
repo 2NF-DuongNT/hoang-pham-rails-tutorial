@@ -1,0 +1,15 @@
+<%= link_to gravatar_for(current_user, size: 20), current_user %>
+<span class="user"><%= link_to current_user.name, current_user %></span>
+<%= form_for [@micropost, @comment], remote: true do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
+
+    <%= f.hidden_field :parent_comment_id %>
+
+    <div class = "mb-2">
+        <%= f.text_field :content, class: "form-control" %>
+    </div>
+
+    <div class = "col-sm">
+        <%= f.submit t("shared.micropost_form.btn_post") ,class: "btn btn-primary btn-sm" %>
+    </div>
+<% end %>

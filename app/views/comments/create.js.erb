@@ -1,0 +1,9 @@
+$("#form_comment-<%= @micropost.id %>").html("");
+
+<% if @comment.parent_comment_id.nil? %>
+    $("#list_comment_micropost_<%= @micropost.id %>").append("<%= j render partial: "comments/comment", object: @comment %>");
+<% else %>
+    $("#micropost_<%= "#{@micropost.id}_show_sub_comment_#{@comment.parent_comment_id}" %> #list_comment_micropost_<%= @micropost.id %>").append("<%= j render partial: "comments/comment", object: @comment %>");
+<% end %>
+
+

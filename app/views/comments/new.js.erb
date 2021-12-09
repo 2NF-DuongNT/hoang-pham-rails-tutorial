@@ -1,0 +1,12 @@
+$(".form_comment").html("")
+<% if params[:comment_id].nil? %>
+    $("#form_comment-<%= params[:micropost_id] %>").html("<%= escape_javascript(render partial:'shared/form_comment', object: @comment) %>");
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#form_comment-<%= params[:micropost_id] %>").offset().top-400
+    },0)
+<% else %> 
+    $("#form_comment-<%= "#{params[:micropost_id]}-#{params[:comment_id]}" %>").html("<%= escape_javascript(render partial:'shared/form_comment') %>");
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#form_comment-<%= "#{params[:micropost_id]}-#{params[:comment_id]}" %>").offset().top-400
+    },0)
+<% end %>
